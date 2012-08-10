@@ -2,7 +2,7 @@ class TodosController < ApplicationController
   # GET /todos
   # GET /todos.json
   def index
-    @todos = Todo.all
+    @todos = current_or_guest_user.todos
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,7 +40,7 @@ class TodosController < ApplicationController
   # POST /todos
   # POST /todos.json
   def create
-    @todo = Todo.new(params[:todo])
+    @todo = current_or_guest_user.todos.new(params[:todo])
 
     respond_to do |format|
       if @todo.save
