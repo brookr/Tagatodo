@@ -10,7 +10,6 @@ gem 'pg', '0.14.0'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'haml-rails',     '0.3.4'
   gem 'sass-rails',     '3.2.3'
   gem 'bootstrap-sass', '2.0.4.0'
   gem 'coffee-rails',   '3.2.1'
@@ -21,6 +20,7 @@ group :assets do
   gem 'uglifier', '1.0.3'
 end
 
+gem 'haml-rails', '0.3.4'
 gem 'jquery-rails'
 gem 'devise', '2.1.2'
 gem 'acts-as-taggable-on', '2.3.1'
