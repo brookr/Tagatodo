@@ -22,6 +22,7 @@ end
 
 gem 'haml-rails', '0.3.4'
 gem 'jquery-rails'
+gem 'cancan'
 gem 'devise', '2.1.2'
 gem 'acts-as-taggable-on', '2.3.1'
 

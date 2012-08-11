@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_or_guest_user
 
+  # make CanCan use current_or_guest_user instead of current_user
+  def current_ability
+    @current_ability ||= Ability.new(current_or_guest_user)
+  end
+
   # if user is logged in, return current_user, else return guest_user
   def current_or_guest_user
     if current_user

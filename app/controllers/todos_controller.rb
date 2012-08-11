@@ -15,6 +15,8 @@ class TodosController < ApplicationController
   def show
     @todo = Todo.find(params[:id])
 
+    authorize! :manage, @todo
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @todo }
@@ -35,12 +37,16 @@ class TodosController < ApplicationController
   # GET /todos/1/edit
   def edit
     @todo = Todo.find(params[:id])
+
+    authorize! :manage, @todo
   end
 
   # POST /todos
   # POST /todos.json
   def create
     @todo = current_or_guest_user.todos.new(params[:todo])
+
+    authorize! :manage, @todo
 
     respond_to do |format|
       if @todo.save
@@ -58,6 +64,8 @@ class TodosController < ApplicationController
   def update
     @todo = Todo.find(params[:id])
 
+    authorize! :manage, @todo
+
     respond_to do |format|
       if @todo.update_attributes(params[:todo])
         format.html { redirect_to @todo, notice: 'Todo was successfully updated.' }
@@ -73,6 +81,9 @@ class TodosController < ApplicationController
   # DELETE /todos/1.json
   def destroy
     @todo = Todo.find(params[:id])
+
+    authorize! :manage, @todo
+
     @todo.destroy
 
     respond_to do |format|

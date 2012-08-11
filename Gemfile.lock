@@ -34,6 +34,7 @@ GEM
     bcrypt-ruby (3.0.1)
     bootstrap-sass (2.0.4.0)
     builder (3.0.0)
+    cancan (1.6.8)
     coffee-rails (3.2.1)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0.beta)
@@ -123,6 +124,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (= 2.3.1)
   bootstrap-sass (= 2.0.4.0)
+  cancan
   coffee-rails (= 3.2.1)
   devise (= 2.1.2)
   haml-rails (= 0.3.4)
