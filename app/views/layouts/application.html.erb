@@ -3,8 +3,7 @@
   <head>
     <title>Tagatodo</title>
 
-    <%= stylesheet_link_tag    'application', :media => 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag 'application', :media => 'all' %>
     <%= csrf_meta_tags %>
   </head>
   
@@ -34,8 +33,12 @@
       <% if alert %>
         <p class='alert alert-error'><%= alert %></p>
       <% end %>
-      
+
       <%= yield %>
     </div>
+
+    <%= javascript_include_tag 'vendor/jquery-1.8.0.min',
+                               'vendor/jquery.pjax' %>
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>

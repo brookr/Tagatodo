@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+  layout :set_layout
+  
   # GET /todos
   # GET /todos.json
   def index
@@ -89,6 +91,16 @@ class TodosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to todos_url }
       format.json { head :no_content }
+    end
+  end
+
+  private
+
+  def set_layout
+    if request.headers['X-PJAX']
+      false
+    else
+      'application'
     end
   end
 end

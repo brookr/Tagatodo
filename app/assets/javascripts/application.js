@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+$('a[data-pjax]').pjax()

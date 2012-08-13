@@ -2,6 +2,6 @@
 
 = render 'form'
 
-= link_to 'Show', @todo
+= link_to 'Show', @todo, :'data-pjax' => '#content'
 \|
 = link_to 'Back', todos_path

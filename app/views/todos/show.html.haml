@@ -10,6 +10,6 @@
   %b Completed:
   = @todo.completed
 
-= link_to 'Edit', edit_todo_path(@todo)
+= link_to 'Edit', edit_todo_path(@todo), :'data-pjax' => '#content'
 \|
 = link_to 'Back', todos_path
