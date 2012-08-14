@@ -21,6 +21,14 @@ $(function() {
 
   $('.best_in_place').best_in_place()
 
+  $('.best_in_place').bind('ajax:success', function() {
+    console.log($(this));
+
+    if ($(this).attr('data-type') === 'checkbox') {
+      $(this).parents('li').fadeTo('slow', 0.5)
+    }
+  })
+
   var url = window.location.href
     , id  = url.substring(url.lastIndexOf('/') + 1)
 
