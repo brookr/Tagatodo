@@ -25,6 +25,7 @@ gem 'jquery-rails'
 gem 'cancan'
 gem 'devise', '2.1.2'
 gem 'acts-as-taggable-on', '2.3.1'
+gem 'pjax_rails'
 gem 'best_in_place'
 
 # To use ActiveModel has_secure_password
