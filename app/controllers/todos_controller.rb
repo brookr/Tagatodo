@@ -20,7 +20,16 @@ class TodosController < ApplicationController
     authorize! :manage, @todo
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html do
+        if request.xhr?
+          render 'show'
+        else
+          @todos = current_or_guest_user.todos
+          
+          render 'index'
+        end
+      end
+
       format.json { render json: @todo }
     end
   end

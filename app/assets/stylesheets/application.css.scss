@@ -18,15 +18,27 @@
   cursor: pointer;
 }
 
-.container-fluid {
+.wrapper.container {
   margin-top: 75px;
+  margin-bottom: 25px;
 }
 
-  .container-fluid h1 {
+  .wrapper.container h1 {
     margin: 0 0 25px 0;
   }
 
-.span3 {
+#info {
   padding: 10px;
   background: #eeeeee;
 }
+
+ul#todos {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+  ul#todos li span.best_in_place {
+    display: inline-block;
+    width: 110px;
+  }

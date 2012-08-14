@@ -20,4 +20,13 @@ $(function() {
   $('a[data-pjax]').pjax()
 
   $('.best_in_place').best_in_place()
+
+  var url = window.location.href
+    , id  = url.substring(url.lastIndexOf('/') + 1)
+
+  if (id) {
+    var link = $('#todos li[data-id="' + id + '"]').find('a')
+
+    link.click()
+  }
 })

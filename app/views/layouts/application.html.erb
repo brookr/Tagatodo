@@ -31,13 +31,12 @@
       </div>
     </div>
 
-    <div class='container-fluid'>
+    <div class='container wrapper'>
       <div class='row-fluid'>
-        <div class='span2'>
-          <p>Tags</p>
+        <div id='tags' class='span2'>
         </div>
 
-        <div class='span7'>
+        <div id='content' class='span6'>
           <% if notice %>
             <p class='alert alert-info'><%= notice %></p>
           <% end %>
@@ -49,8 +48,7 @@
           <%= yield %>
         </div>
         
-        <div class='span3'>
-          <p>Tags</p>
+        <div id='info' class='span4'>
         </div>
       </div>
     </div>
