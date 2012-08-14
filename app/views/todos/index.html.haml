@@ -1,5 +1,7 @@
 %h1 Things To Do
 
+= link_to 'New Todo', new_todo_path, :'data-pjax' => '#content'
+
 - @todos.each do |todo|
   %ul
     %li
