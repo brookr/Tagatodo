@@ -6,5 +6,5 @@
   %ul#todos
     %li{ :'data-id' => todo.id }
       = best_in_place todo, :completed, :type => :checkbox,
-        :collection => [ 'Not Completed', 'Completed']
+        :collection => [ '|_|', '|x|']
       = link_to todo.title, todo, :'data-pjax' => '#info'
