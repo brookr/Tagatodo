@@ -14,6 +14,12 @@
           <%= link_to 'Tagatodo', root_path, :class => 'brand' %>
 
           <ul class='nav pull-right'>
+            <li>
+              <%= link_to 'New Todo', new_todo_path, :'data-pjax' => '#content' %>
+            </li>
+
+            <li class='divider-vertical'></li>
+
             <% if current_user %>
               <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
             <% else %>

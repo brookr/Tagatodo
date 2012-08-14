@@ -1,23 +1,7 @@
-%h1 Listing todos
+%h1 Things To Do
 
-%table
-  %tr
-    %th Title
-    %th Notes
-    %th Completed
-    %th
-    %th
-    %th
-
-  - @todos.each do |todo|
-    %tr
-      %td= todo.title
-      %td= todo.notes
-      %td= todo.completed
-      %td= link_to 'Show', todo, :'data-pjax' => '#content'
-      %td= link_to 'Edit', edit_todo_path(todo), :'data-pjax' => '#content'
-      %td= link_to 'Destroy', todo, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Todo', new_todo_path, :'data-pjax' => '#content'
+- @todos.each do |todo|
+  %ul
+    %li
+      = link_to todo.title, todo, :'data-pjax' => '#content',
+                                  :class => "#{ 'completed' if todo.completed }"
