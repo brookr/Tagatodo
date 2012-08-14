@@ -18,10 +18,15 @@
   cursor: pointer;
 }
 
-#content {
+.container-fluid {
   margin-top: 75px;
 }
 
-  #content h1 {
+  .container-fluid h1 {
     margin: 0 0 25px 0;
   }
+
+.span3 {
+  padding: 10px;
+  background: #eeeeee;
+}
