@@ -4,7 +4,11 @@ class TodosController < ApplicationController
   # GET /todos
   # GET /todos.json
   def index
-    @todos = current_or_guest_user.todos
+    if params[:completed]
+      @todos = current_or_guest_user.todos.where(:completed => params[:completed])
+    else
+      @todos = current_or_guest_user.todos
+    end
 
     respond_to do |format|
       format.html # index.html.erb

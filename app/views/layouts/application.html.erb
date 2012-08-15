@@ -15,8 +15,8 @@
 
           <ul class='nav pull-left'>
             <li><%= link_to 'All', root_path %></li>
-            <li><%= link_to 'Active', root_path %></li>
-            <li><%= link_to 'Completed', root_path %></li>
+            <li><%= link_to 'Active', root_path(:completed => false) %></li>
+            <li><%= link_to 'Completed', root_path(:completed => true) %></li>
           </ul>
 
           <ul class='nav pull-right'>
