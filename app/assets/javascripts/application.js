@@ -29,7 +29,13 @@ $(function() {
     console.log($(this));
 
     if ($(this).attr('data-type') === 'checkbox') {
-      $(this).parents('li').fadeTo('slow', 0.5)
+      var li = $(this).parents('li')
+
+      if (li.hasClass('completed')) {
+        li.fadeTo('slow', 1).removeClass('completed')
+      } else {
+        li.fadeTo('slow', 0.5).addClass('completed')
+      }
     }
   })
 
