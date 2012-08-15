@@ -19,6 +19,10 @@
 $(function() {
   $('a[data-pjax]').pjax()
 
+  $(document).on('pjax:end', function() {
+    $('#info').show()
+  })
+
   $('.best_in_place').best_in_place()
 
   $('.best_in_place').bind('ajax:success', function() {
