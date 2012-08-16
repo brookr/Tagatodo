@@ -5,7 +5,7 @@
 = content_for :tag_list do
   %ul
     - @todos.map(&:tag_list).flatten.sort.each do |tag|
-      %li= tag
+      %li= link_to tag, root_path(:has_tag => tag)
 
 %ul#todos
   - @todos.each do |todo|

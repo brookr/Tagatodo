@@ -6,6 +6,8 @@ class TodosController < ApplicationController
   def index
     if params[:completed]
       @todos = current_or_guest_user.todos.where(:completed => params[:completed])
+    elsif params[:has_tag]
+      @todos = current_or_guest_user.todos.tagged_with(params[:has_tag])
     else
       @todos = current_or_guest_user.todos
     end
