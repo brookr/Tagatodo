@@ -39,6 +39,11 @@ ul#todos {
   list-style-type: none;
 }
 
+  ul#todos li.selected {
+    margin-right: -20px;
+    background: #eeeeee;
+  }
+
   ul#todos li span.best_in_place {
     display: inline-block;
     width: 20px;

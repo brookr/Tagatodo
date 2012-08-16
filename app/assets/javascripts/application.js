@@ -19,7 +19,10 @@
 $(function() {
   $('a[data-pjax]').pjax()
 
-  $(document).on('pjax:end', function() {
+  $(document).on('pjax:end', function(ev) {
+    $('ul#todos li').removeClass('selected')
+    $(ev.relatedTarget).parents('li').addClass('selected')
+    
     $('#info').show()
   })
 
