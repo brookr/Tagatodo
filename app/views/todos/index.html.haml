@@ -4,8 +4,9 @@
 
 = content_for :tag_list do
   %ul
-    - @todos.map(&:tag_list).flatten.sort.each do |tag|
-      %li= link_to tag, root_path(:has_tag => tag)
+    - @todos.map(&:tag_list).flatten.uniq.sort.each do |tag|
+      - url = params[:tags] + ',' + tag if params[:tags]
+      %li= link_to tag, root_path(params.merge({:tags => url || tag}))
 
 %ul#todos
   - @todos.each do |todo|
