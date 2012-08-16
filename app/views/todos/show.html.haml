@@ -5,3 +5,5 @@
 %p
   %strong Is this task completed?
   = best_in_place @todo, :completed, :type => :checkbox
+
+%p= best_in_place @todo, :tag_list, :type => :input

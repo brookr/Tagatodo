@@ -7,4 +7,4 @@
     %li{ :'data-id' => todo.id }
       = best_in_place todo, :completed, :type => :checkbox,
         :collection => [ '|_|', '|x|']
-      = link_to todo.title, todo, :'data-pjax' => '#info'
+      = link_to "#{todo.title} <span class='tags'>#{todo.tag_list}<span>".html_safe, todo, :'data-pjax' => '#info'

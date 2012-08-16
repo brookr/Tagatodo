@@ -45,6 +45,10 @@ ul#todos {
     background: #eeeeee;
   }
 
+  ul#todos li span.tags {
+    font-size: 10px;
+  }
+
   ul#todos li span.best_in_place {
     display: inline-block;
     width: 20px;
