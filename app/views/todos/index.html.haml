@@ -2,8 +2,13 @@
 
 = link_to 'New Todo', new_todo_path, :'data-pjax' => '#info'
 
-- @todos.each do |todo|
-  %ul#todos
+= content_for :tag_list do
+  %ul
+    - @todos.map(&:tag_list).flatten.sort.each do |tag|
+      %li= tag
+
+%ul#todos
+  - @todos.each do |todo|
     %li{ :'data-id' => todo.id }
       = best_in_place todo, :completed, :type => :checkbox,
         :collection => [ '|_|', '|x|']
