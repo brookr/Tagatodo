@@ -1,6 +1,6 @@
 %h1 Things To Do
 
-= link_to 'New Todo', new_todo_path, :'data-pjax' => '#info'
+= link_to 'New Todo', new_todo_path({ :tags => params[:tags] }), :'data-pjax' => '#info'
 
 = content_for :tag_list do
   %ul

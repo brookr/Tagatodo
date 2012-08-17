@@ -10,6 +10,9 @@
     = f.label :title
     = f.text_field :title
   .field
+    = f.label :tag_list
+    = f.text_field :tag_list, :value => params[:tags]
+  .field
     = f.label :notes
     = f.text_area :notes
   .field

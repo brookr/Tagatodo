@@ -1,9 +1,9 @@
 %h3= best_in_place @todo, :title, :type => :input
 
+%p= best_in_place @todo, :tag_list, :type => :input, :nil => 'Click to add tags'
+
 %p= best_in_place @todo, :notes, :type => :textarea
 
 %p
   %strong Is this task completed?
   = best_in_place @todo, :completed, :type => :checkbox
-
-%p= best_in_place @todo, :tag_list, :type => :input, :nil => 'Click to add tags'
