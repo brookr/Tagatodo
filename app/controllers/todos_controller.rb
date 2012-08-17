@@ -1,17 +1,11 @@
 class TodosController < ApplicationController
   layout :set_layout
-  
+
+  before_filter :get_tasks
+
   # GET /todos
   # GET /todos.json
   def index
-    if params[:completed]
-      @todos = current_or_guest_user.todos.where(:completed => params[:completed])
-    elsif params[:tags]
-      @todos = current_or_guest_user.todos.tagged_with(params[:tags].split(','))
-    else
-      @todos = current_or_guest_user.todos
-    end
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @todos }
@@ -116,6 +110,18 @@ class TodosController < ApplicationController
       false
     else
       'application'
+    end
+  end
+
+  def get_tasks
+    @todos = current_or_guest_user.todos
+  
+    if params[:completed]
+      @todos = current_or_guest_user.todos.where(:completed => params[:completed])
+    end
+
+    if params[:tags]
+      @todos = @todos.tagged_with(params[:tags].split(','))
     end
   end
 end

@@ -5,8 +5,7 @@
 = content_for :tag_list do
   %ul
     - @todos.map(&:tag_list).flatten.uniq.sort.each do |tag|
-      - url = params[:tags] + ',' + tag if params[:tags]
-      %li= link_to tag, root_path(params.merge({:tags => url || tag}))
+      %li= link_to tag, tasks_with_tag_path(tag)
 
 %ul#todos
   - @todos.each do |todo|
