@@ -1,13 +1,12 @@
 %h1 Things To Do
 
-= link_to 'New Todo', new_todo_path({ :tags => params[:tags] }), :'data-pjax' => '#info'
-
 = content_for :tag_list do
   %ul
     - @todos.map(&:tag_list).flatten.uniq.sort.each do |tag|
       %li= link_to tag, tasks_with_tag_path(tag)
 
 %ul#todos
+  %li= link_to 'New Todo', new_todo_path({ :tags => params[:tags] }), :'data-pjax' => '#info'
   - @todos.each do |todo|
     %li{ :'data-id' => todo.id }
       = best_in_place todo, :completed, :type => :checkbox,
