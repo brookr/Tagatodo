@@ -1,6 +1,8 @@
 %h3= best_in_place @todo, :title, :type => :input
 
-%p= best_in_place @todo, :tag_list, :type => :input, :nil => 'Click to add tags'
+- @todo.tag_list = 'Click to Add Tag' if @todo.tag_list.empty?
+
+%p= best_in_place @todo, :tag_list, :type => :input
 
 %p= best_in_place @todo, :notes, :type => :textarea
 
