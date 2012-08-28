@@ -35,11 +35,8 @@ class ApplicationController < ActionController::Base
   # called (once) when the user logs in, insert any code your application needs
   # to hand off from guest_user to current_user.
   def logging_in
-    guest_user.todos.each do |todo|
-      todo.user_id = current_user.id
-
-      todo.save
-    end
+    current_user.todos = (current_user.todos + guest_user.todos)
+    current_user.save
   end
 
   private
