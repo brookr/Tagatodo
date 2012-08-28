@@ -1,0 +1,9 @@
+%ul
+  - @todos.map(&:tag_list).flatten.uniq.sort.each do |tag|
+    %li
+      = link_to tag, tasks_with_tag_path(tag)
+
+      - if tag_in_params(tag)
+        %i.icon-minus
+      - else
+        %i.icon-plus

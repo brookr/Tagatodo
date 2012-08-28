@@ -17,6 +17,9 @@
 //= require best_in_place
 
 $(function() {
+  var url = window.location.href
+    , id  = parseInt(url.substring(url.lastIndexOf('/') + 1))
+  
   $('a[data-pjax]').pjax()
 
   $(document).on('pjax:end', function(ev) {
@@ -45,9 +48,6 @@ $(function() {
       }
     }
   })
-
-  var url = window.location.href
-    , id  = url.substring(url.lastIndexOf('/') + 1)
 
   if (id) {
     var link = $('#todos li[data-id="' + id + '"]').find('a')

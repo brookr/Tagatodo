@@ -24,8 +24,6 @@ class TodosController < ApplicationController
         if request.xhr?
           render 'show'
         else
-          @todos = current_or_guest_user.todos
-          
           render 'index'
         end
       end
@@ -117,7 +115,7 @@ class TodosController < ApplicationController
     @todos = current_or_guest_user.todos
   
     if params[:completed]
-      @todos = current_or_guest_user.todos.where(:completed => params[:completed])
+      @todos = @todos.where(:completed => params[:completed])
     end
 
     if params[:tags]

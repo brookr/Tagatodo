@@ -14,7 +14,7 @@ module TodosHelper
       tags = tags.join(',')
     end
 
-    tags.blank? ? root_path(params.except(:tags)) : root_path(params.merge({ :tags => tags }))
+    tags.blank? ? url_for(params.except(:tags)) : url_for(params.merge({ :tags => tags }))
   end
 
   def tag_in_params tag

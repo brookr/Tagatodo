@@ -1,15 +1,7 @@
-%h1 Things To Do
-
 = content_for :tag_list do
-  %ul
-    - @todos.map(&:tag_list).flatten.uniq.sort.each do |tag|
-      %li
-        = link_to tag, tasks_with_tag_path(tag)
+  = render :partial => 'tags_list'
 
-        - if tag_in_params(tag)
-          %i.icon-minus
-        - else
-          %i.icon-plus
+%h1 Things To Do
 
 %ul#todos
   %li= link_to 'New Todo', new_todo_path({ :tags => params[:tags] }), :'data-pjax' => '#info'
@@ -17,4 +9,4 @@
     %li{ :'data-id' => todo.id }
       = best_in_place todo, :completed, :type => :checkbox,
         :collection => [ '|_|', '|x|']
-      = link_to "#{todo.title} <span class='tags'>#{todo.tag_list}<span>".html_safe, todo, :'data-pjax' => '#info'
+      = link_to "#{todo.title} <span class='tags'>#{todo.tag_list}<span>".html_safe, todo_path(todo, params.merge({ :tags => params[:tags] })), :'data-pjax' => '#info'
