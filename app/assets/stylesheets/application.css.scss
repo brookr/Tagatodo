@@ -33,6 +33,14 @@
   list-style-type: none;
 }
 
+  #tags ul li i {
+    display: none;
+  }
+
+  #tags ul  li:hover i {
+    display: inline-block;
+  }
+
 #info {
   display: none;
   padding: 10px;

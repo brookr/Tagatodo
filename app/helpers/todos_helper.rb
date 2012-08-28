@@ -16,4 +16,10 @@ module TodosHelper
 
     tags.blank? ? root_path : root_path(params.merge({ :tags => tags }))
   end
+
+  def tag_in_params tag
+    if params[:tags]
+      params[:tags].split(',').include?(tag)
+    end
+  end
 end
