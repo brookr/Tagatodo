@@ -24,6 +24,10 @@ $(function() {
     $(ev.relatedTarget).parents('li').addClass('selected')
     
     $('#info').show()
+
+    if ($('#todo_title')) {
+      $('#todo_title').focus()
+    }
   })
 
   $('.best_in_place').best_in_place()
@@ -53,8 +57,8 @@ $(function() {
 
   var handleKeyUp = function(e) {
     if (e.keyCode == 67) {
-      console.log('hi')
       $($('#todos li')[0]).find('a').click()
+
     }
   }
 
