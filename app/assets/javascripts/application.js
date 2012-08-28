@@ -50,4 +50,13 @@ $(function() {
 
     link.click()
   }
+
+  var handleKeyUp = function(e) {
+    if (e.keyCode == 67) {
+      console.log('hi')
+      $($('#todos li')[0]).find('a').click()
+    }
+  }
+
+  document.addEventListener('keyup', handleKeyUp, false)
 })
