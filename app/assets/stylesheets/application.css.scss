@@ -63,6 +63,10 @@ ul#todos {
     background: #eeeeee;
   }
 
+  ul#todos li.completed {
+    opacity: 0.5;
+  }
+
   ul#todos li span.tags {
     font-size: 10px;
   }
