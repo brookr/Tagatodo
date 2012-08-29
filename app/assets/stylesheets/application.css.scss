@@ -37,7 +37,11 @@
     display: none;
   }
 
-  #tags ul  li:hover i {
+  #tags ul li i {
+    margin-left: -20px;
+  }
+
+  #tags ul li:hover i {
     display: inline-block;
   }
 
