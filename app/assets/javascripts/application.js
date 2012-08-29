@@ -17,8 +17,6 @@
 //= require best_in_place
 
 $(function() {
-  document.addEventListener('keyup', handleKeyUp, false)
-  
   var url = window.location.href
     , id  = parseInt(url.substring(url.lastIndexOf('/') + 1))
 
@@ -85,4 +83,6 @@ $(function() {
   if (id) {
     $('#todos li[data-id="' + id + '"]').find('a').click()
   }
+  
+  document.addEventListener('keyup', handleKeyUp, false)
 })
