@@ -34,7 +34,9 @@
     <div class='container wrapper'>
       <div class='row-fluid'>
         <div id='tags' class='span2'>
-          <%= render :partial => 'tags/list' %>
+          <% if params[:controller] == 'todos' %>
+            <%= render :partial => 'tags/list' %>
+          <% end %>
         </div>
 
         <div id='content' class='span6'>
