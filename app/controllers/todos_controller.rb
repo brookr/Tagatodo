@@ -104,22 +104,10 @@ class TodosController < ApplicationController
   private
 
   def set_layout
-    if request.headers['X-PJAX']
+    if request.headers['X-PJAX'] || request.xhr?
       false
     else
       'application'
-    end
-  end
-
-  def get_tasks
-    @todos = current_or_guest_user.todos
-  
-    if params[:completed]
-      @todos = @todos.where(:completed => params[:completed])
-    end
-
-    if params[:tags]
-      @todos = @todos.tagged_with(params[:tags].split(','))
     end
   end
 end

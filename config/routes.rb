@@ -1,10 +1,13 @@
 Tagatodo::Application.routes.draw do
+  get "tags/index"
+
   resources :todos
+  resources :tags
 
   devise_for :users
 
   root :to => 'todos#index'
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

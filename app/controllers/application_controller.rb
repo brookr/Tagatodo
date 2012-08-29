@@ -39,6 +39,18 @@ class ApplicationController < ActionController::Base
     current_user.save
   end
 
+  def get_tasks
+    @todos = current_or_guest_user.todos
+  
+    if params[:completed]
+      @todos = @todos.where(:completed => params[:completed])
+    end
+
+    if params[:tags]
+      @todos = @todos.tagged_with(params[:tags].split(','))
+    end
+  end
+
   private
 
   def create_guest_user
